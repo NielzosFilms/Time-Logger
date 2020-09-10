@@ -1,0 +1,17 @@
+{
+    "projects": [
+        { "id": 1, "title": "Orino", "total_time": "46" },
+        { "id": 2, "title": "Factorio", "total_time": "26" },
+        { "id": 3, "title": "Rocket League", "total_time": "26" },
+        { "id": 4, "title": "Minecraft", "total_time": "26" }
+    ],
+    "timestamps": [
+        {
+            "id": 1,
+            "total_time": "08:00",
+            "date": "10-09-2020",
+            "content": "Niet heel veel gedaan added",
+            "project_id": 1
+        }
+    ]
+}
