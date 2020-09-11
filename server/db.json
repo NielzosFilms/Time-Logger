@@ -1,55 +1,41 @@
 {
-    "projects": [
-        {
-            "title": "Orino",
-            "total_time": 12,
-            "total_logs": "2",
-            "latest_log": "Nieuwe log",
-            "id": 1
-        },
-        {
-            "id": 2,
-            "title": "Factorio",
-            "total_time": 0,
-            "total_logs": 0,
-            "latest_log": ""
-        },
-        {
-            "id": 3,
-            "title": "Rocket League",
-            "total_time": 0,
-            "total_logs": 0,
-            "latest_log": ""
-        },
-        {
-            "id": 4,
-            "title": "Minecraft",
-            "total_time": 0,
-            "total_logs": 0,
-            "latest_log": ""
-        }
-    ],
-    "logs": [
-        {
-            "id": 1,
-            "total_time": 8,
-            "date": "10-09-2020",
-            "content": "Niet heel veel gedaan added",
-            "project_id": 1
-        },
-        {
-            "content": "Nieuwe log",
-            "total_time": "4",
-            "date": "2020-09-12",
-            "project_id": 1,
-            "id": 2
-        },
-        {
-            "content": "Nieuwe2 log",
-            "total_time": "4",
-            "date": "2020-09-12",
-            "project_id": 2,
-            "id": 2
-        }
-    ]
+  "projects": [
+    {
+      "title": "Orino",
+      "total_time": "8",
+      "total_logs": "1",
+      "latest_log": "Time Logger gemaakt",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "title": "Factorio",
+      "total_time": 0,
+      "total_logs": 0,
+      "latest_log": ""
+    },
+    {
+      "id": 3,
+      "title": "Rocket League",
+      "total_time": 0,
+      "total_logs": 0,
+      "latest_log": ""
+    },
+    {
+      "id": 4,
+      "title": "Minecraft",
+      "total_time": 0,
+      "total_logs": 0,
+      "latest_log": ""
+    }
+  ],
+  "logs": [
+    {
+      "content": "Time Logger gemaakt",
+      "total_time": "8",
+      "date": "2020-09-11",
+      "project_id": "1",
+      "id": 1
+    }
+  ]
 }

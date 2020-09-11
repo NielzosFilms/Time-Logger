@@ -36,8 +36,8 @@ function NewLog(props) {
         };
         const update_project_body = {
             title: project.title,
-            total_time: parseInt(project.total_time + hours),
-            total_logs: parseInt(project.total_logs + 1),
+            total_time: parseInt(project.total_time) + hours,
+            total_logs: parseInt(project.total_logs) + 1,
             latest_log: content,
         };
         const config = {
