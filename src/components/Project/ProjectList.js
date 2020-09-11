@@ -11,7 +11,6 @@ function ProjectList() {
 
     const fetchProjects = async () => {
         axios.get("http://localhost:4000/projects").then((response) => {
-            console.log(response.data);
             setData(response.data);
         });
     };
@@ -20,7 +19,6 @@ function ProjectList() {
         fetchProjects();
     }, [preventLoop]);
 
-    console.log(data);
     if (data) {
         return (
             <div className="container">
@@ -34,7 +32,7 @@ function ProjectList() {
                                     Latest Log:
                                     {project.latest_log && (
                                         <blockquote className="p-1 blockquote">
-                                            <p class="mb-0">
+                                            <p className="mb-0">
                                                 {project.latest_log}
                                             </p>
                                         </blockquote>
