@@ -1,11 +1,11 @@
 {
     "projects": [
         {
-            "id": 1,
             "title": "Orino",
-            "total_time": 16,
-            "total_logs": 2,
-            "latest_log": "Reactview aangepast"
+            "total_time": "12",
+            "total_logs": "2",
+            "latest_log": "Nieuwe log",
+            "id": 1
         },
         {
             "id": 2,
@@ -29,13 +29,27 @@
             "latest_log": ""
         }
     ],
-    "timestamps": [
+    "logs": [
         {
             "id": 1,
-            "total_time": "08:00",
+            "total_time": 8,
             "date": "10-09-2020",
             "content": "Niet heel veel gedaan added",
             "project_id": 1
+        },
+        {
+            "content": "Nieuwe log",
+            "total_time": "4",
+            "date": "2020-09-12",
+            "project_id": 1,
+            "id": 2
+        },
+        {
+            "content": "Nieuwe2 log",
+            "total_time": "4",
+            "date": "2020-09-12",
+            "project_id": 2,
+            "id": 2
         }
     ]
 }
