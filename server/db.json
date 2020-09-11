@@ -3,22 +3,30 @@
         {
             "id": 1,
             "title": "Orino",
-            "total_time": 0
+            "total_time": 16,
+            "total_logs": 2,
+            "latest_log": "Reactview aangepast"
         },
         {
             "id": 2,
             "title": "Factorio",
-            "total_time": 0
+            "total_time": 0,
+            "total_logs": 0,
+            "latest_log": ""
         },
         {
             "id": 3,
             "title": "Rocket League",
-            "total_time": 0
+            "total_time": 0,
+            "total_logs": 0,
+            "latest_log": ""
         },
         {
             "id": 4,
             "title": "Minecraft",
-            "total_time": 0
+            "total_time": 0,
+            "total_logs": 0,
+            "latest_log": ""
         }
     ],
     "timestamps": [

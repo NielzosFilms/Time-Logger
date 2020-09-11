@@ -12,6 +12,7 @@ function ProjectNew() {
         const body = {
             title,
             total_time: 0,
+            total_logs: 0,
         };
         const config = {
             headers: {

@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+import ProjectStats from "./ProjectStats";
+
 function ProjectDetails(props) {
     const [data, setData] = React.useState();
     const preventLoop = 0;
@@ -21,11 +23,7 @@ function ProjectDetails(props) {
         return (
             <div className="container jumbotron">
                 <h1 className="display-4">{data.title}</h1>
-                <p className="lead text-muted" style={{ display: "inline" }}>
-                    Number of Logs: NaN
-                    <br />
-                    Total Time: {data.total_time}
-                </p>
+                <ProjectStats data={data} />
                 <Link
                     to={`/project/details/${id}/log/new`}
                     className="text-info float-right"

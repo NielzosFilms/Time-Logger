@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 import ProjectNewButton from "./ProjectNewButton";
+import ProjectStats from "./ProjectStats";
 
 function ProjectList() {
     const [data, setData] = React.useState();
@@ -23,29 +24,24 @@ function ProjectList() {
     if (data) {
         return (
             <div className="container">
-                {data.map(({ id, title, total_time }) => {
+                {data.map((project) => {
                     return (
-                        <div key={id} className="card m-2">
+                        <div key={project.id} className="card m-2">
                             <div className="card-body">
-                                <h5 className="card-title">{title}</h5>
-                                <div className="card-text text-muted">
-                                    <p
-                                        className="card-text"
-                                        style={{
-                                            display: "inline-block",
-                                            width: "75%",
-                                        }}
-                                    >
-                                        Latest log: "niet veel gedaan"
-                                        <br />
-                                        Time: 08:00 H
-                                    </p>
-                                    <p className="card-text float-right">
-                                        Time spent: {total_time} H
-                                    </p>
+                                <h5 className="card-title">{project.title}</h5>
+                                <ProjectStats data={project} />
+                                <div className="card-text text-light">
+                                    Latest Log:
+                                    {project.latest_log && (
+                                        <blockquote className="p-1 blockquote">
+                                            <p class="mb-0">
+                                                {project.latest_log}
+                                            </p>
+                                        </blockquote>
+                                    )}
                                 </div>
                                 <Link
-                                    to={"/project/details/" + id}
+                                    to={"/project/details/" + project.id}
                                     className="btn btn-secondary float-right"
                                 >
                                     <svg
