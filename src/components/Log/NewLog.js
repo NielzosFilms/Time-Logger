@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import qs from "querystring";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function NewLog(props) {
     const project_id = props.match.params.id;
@@ -30,14 +30,14 @@ function NewLog(props) {
 
         const body = {
             content,
-            total_time: hours,
+            total_time: parseInt(hours),
             date,
             project_id: parseInt(project_id),
         };
         const update_project_body = {
             title: project.title,
-            total_time: project.total_time + hours,
-            total_logs: project.total_logs + 1,
+            total_time: parseInt(project.total_time + hours),
+            total_logs: parseInt(project.total_logs + 1),
             latest_log: content,
         };
         const config = {

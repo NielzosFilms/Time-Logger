@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import qs from "querystring";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function ProjectNew() {
     const [title, setTitle] = React.useState("");

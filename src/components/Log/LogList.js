@@ -22,6 +22,7 @@ function LogList(props) {
             if (log.project_id === project_id) {
                 project_logs.push(log);
             }
+            return log;
         });
         return (
             <ul className="list-group">
