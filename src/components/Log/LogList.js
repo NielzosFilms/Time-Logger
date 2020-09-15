@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
+import qs from "querystring";
 
 function LogList(props) {
     const project_id = props.project_id;
     const [logs, setLogs] = React.useState();
+    const [project, setProject] = React.useState();
     const preventLoop = 0;
 
     const fetchLogs = async () => {
@@ -12,17 +14,56 @@ function LogList(props) {
         });
     };
 
+    const fetchProject = async () => {
+        axios
+            .get("http://localhost:4000/projects/" + project_id)
+            .then((response) => {
+                setProject(response.data);
+            });
+    };
+
+    function handleDelete(id) {
+        const current_log = logs.map((log) => {
+            if (log.id == id) {
+                return log;
+            }
+        });
+        const update_project_body = {
+            title: project.title,
+            total_time: parseInt(project.total_time) - current_log.hours,
+            total_logs: parseInt(project.total_logs) - 1,
+            latest_log: "",
+        };
+        axios
+            .put(
+                `http://localhost:4000/projects/${project_id}`,
+                qs.stringify(update_project_body)
+            )
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        axios.delete("http://localhost:4000/logs/" + id);
+        // update component
+    }
+
     React.useEffect(() => {
         fetchLogs();
+        fetchProject();
     }, [preventLoop]);
 
     if (logs) {
         let project_logs = [];
         logs.map((log) => {
-            if (log.project_id === project_id) {
+            if (parseInt(log.project_id) === parseInt(project_id)) {
                 project_logs.push(log);
             }
             return log;
+        });
+        project_logs.sort(function (a, b) {
+            return b.id - a.id || a.content.localeCompare(b.content);
         });
         return (
             <ul className="list-group">
@@ -30,11 +71,29 @@ function LogList(props) {
                     return (
                         <li key={log.id} className="list-group-item">
                             <div>{log.content}</div>
-                            <div className="d-flex text-muted">
+                            <div className="d-flex text-muted float-left">
                                 <p className="p-1">Time: {log.total_time} H</p>
                                 <p className="p-1">|</p>
                                 <p className="p-1">Date: {log.date}</p>
                             </div>
+                            <button
+                                class="btn text-secondary float-right"
+                                onClick={() => handleDelete(log.id)}
+                            >
+                                <svg
+                                    width="2em"
+                                    height="2em"
+                                    viewBox="0 0 16 16"
+                                    class="bi bi-x-circle-fill"
+                                    fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"
+                                    />
+                                </svg>
+                            </button>
                         </li>
                     );
                 })}

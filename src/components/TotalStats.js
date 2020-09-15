@@ -17,7 +17,7 @@ function TotalStats() {
 
     if (data) {
         const final_time = data.reduce((total, { total_time }) => {
-            return total + total_time;
+            return parseInt(total) + parseInt(total_time);
         }, 0);
         return (
             <div className="text-muted d-flex">
