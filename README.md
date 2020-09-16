@@ -15,7 +15,7 @@ This is a simple ReactJS application where you can keep track of the time you sp
 React is used for the frontend.
 <br /><br />
 `JSON server`<br />
-JSON server is a simple library that runs a server with a JSON file as database data.
+JSON server is a simple library that runs a server with a JSON file ([db.json](./server/db.json)) as database data.
 
 --------------------------------------------------
 ### Setup
