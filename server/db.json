@@ -1,55 +1,6 @@
 {
   "projects": [
-    {
-      "title": "Orino",
-      "total_time": "14",
-      "total_logs": "2",
-      "latest_log": "nog een",
-      "id": 1
-    },
-    {
-      "title": "Factorio",
-      "total_time": "8",
-      "total_logs": "1",
-      "latest_log": "New base made",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "title": "Rocket League",
-      "total_time": 0,
-      "total_logs": 0,
-      "latest_log": ""
-    },
-    {
-      "id": 4,
-      "title": "Minecraft",
-      "total_time": 0,
-      "total_logs": 0,
-      "latest_log": ""
-    }
   ],
   "logs": [
-    {
-      "content": "test",
-      "total_time": "8",
-      "date": "2020-09-16",
-      "project_id": "1",
-      "id": 1
-    },
-    {
-      "content": "nog een",
-      "total_time": "6",
-      "date": "2020-09-16",
-      "project_id": "1",
-      "id": 2
-    },
-    {
-      "content": "New base made",
-      "total_time": "8",
-      "date": "2020-09-18",
-      "project_id": "2",
-      "id": 3
-    }
   ]
 }
