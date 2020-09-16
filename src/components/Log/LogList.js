@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import qs from "querystring";
+import { parse } from "path";
 
 function LogList(props) {
     const project_id = props.project_id;
@@ -23,15 +24,18 @@ function LogList(props) {
     };
 
     function handleDelete(id) {
-        const current_log = logs.map((log) => {
-            if (log.id == id) {
-                return log;
+        let new_time = 0;
+        for (let i = 0; i < logs.length; i++) {
+            if (logs[i].id == id) {
+                new_time =
+                    parseInt(project.total_time) - parseInt(logs[i].total_time);
+                break;
             }
-        });
+        }
         const update_project_body = {
             title: project.title,
-            total_time: parseInt(project.total_time) - current_log.hours,
-            total_logs: parseInt(project.total_logs) - 1,
+            total_time: new_time,
+            total_logs: parseInt(parseInt(project.total_logs) - 1),
             latest_log: "",
         };
         axios

@@ -2,16 +2,16 @@
   "projects": [
     {
       "title": "Orino",
-      "total_time": "20",
-      "total_logs": "4",
-      "latest_log": "sort function added",
+      "total_time": "14",
+      "total_logs": "2",
+      "latest_log": "nog een",
       "id": 1
     },
     {
       "title": "Factorio",
-      "total_time": "",
-      "total_logs": "4",
-      "latest_log": "",
+      "total_time": "8",
+      "total_logs": "1",
+      "latest_log": "New base made",
       "id": 2
     },
     {
@@ -31,32 +31,25 @@
   ],
   "logs": [
     {
-      "content": "Time Logger gemaakt",
+      "content": "test",
       "total_time": "8",
-      "date": "2020-09-11",
+      "date": "2020-09-16",
       "project_id": "1",
       "id": 1
     },
     {
-      "content": "test log",
-      "total_time": "3",
-      "date": "2020-09-15",
+      "content": "nog een",
+      "total_time": "6",
+      "date": "2020-09-16",
       "project_id": "1",
       "id": 2
     },
     {
-      "content": "Filters toegevoegd",
+      "content": "New base made",
       "total_time": "8",
-      "date": "2020-09-14",
-      "project_id": "1",
+      "date": "2020-09-18",
+      "project_id": "2",
       "id": 3
-    },
-    {
-      "content": "sort function added",
-      "total_time": "1",
-      "date": "2020-09-15",
-      "project_id": "1",
-      "id": 4
     }
   ]
 }
